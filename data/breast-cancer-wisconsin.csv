@@ -1,4 +1,4 @@
-id,Thickne,cell_size,cell_shape,marginal_Adhesion,Epithehtial_Cell_Size,Bare_Nuclei_Bland_Chromatin,,Normal_Nucleoli_Mitosis,class
+id,Thickne,cell_size,cell_shape,marginal_Adhesion,Epithehtial_Cell_Size,Bare_Nuclei,Bland_Chromatin,Normal_Nucleoli,Mitosis,class
 1002945,5,4,4,5,7,10,3,2,1,2
 1015425,3,1,1,1,2,2,3,1,1,2
 1016277,6,8,8,1,3,4,3,7,1,2

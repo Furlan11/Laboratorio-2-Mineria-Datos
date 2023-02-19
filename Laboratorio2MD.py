@@ -3,7 +3,7 @@
 """
 Created on Sun Feb 19 13:47:23 2023
 
-@author: GuillermoFurlan
+@author: mito
 """
 
 
@@ -12,12 +12,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 ##import seaborn as sns
 
-from quickda.explore_data import *
-from quickda.clean_data import *
-from quickda.explore_numeric import *
-from quickda.explore_categoric import *
-from quickda.explore_numeric_categoric import *
-from quickda.explore_time_series import *
 from pandas_profiling import ProfileReport
 pd.options.mode.chained_assignment = None
 
@@ -43,17 +37,21 @@ datos=datos.drop(['id','cell_shape','marginal_Adhesion','Epithehtial_Cell_Size',
 
 
 #Dividir datos en conjutnos de prueba
-X=datos.iloc[:, 0:4].values
-y=datos.iloc[:, -1].values
+X = datos.iloc[:, 0:4].values
+y = datos.iloc[:, -1].values
 
 from sklearn.model_selection import train_test_split
+
 X_entreno, X_prueba, y_entreno, y_prueba = train_test_split(X, y, test_size = 0.25, random_state = 0)
 
 from sklearn.linear_model import LogisticRegression
+
 modeloLog = LogisticRegression(max_iter = 500)
 modeloLog.fit(X_entreno,y_entreno)
 predicciones = modeloLog.predict(X_prueba)
+
 from sklearn.metrics import classification_report
+
 print(classification_report(y_prueba, predicciones))
 
 
