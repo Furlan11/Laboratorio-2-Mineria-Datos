@@ -11,4 +11,5 @@ def remove_columns_w_value_in_any_column(df: DataFrame, value: str) -> DataFrame
     Returns:
         DataFrame: Modified dataframe without the rows with ?
     """
-    return df.drop(df[df == "value"].index)
+    return df[~df.astype(str).apply(lambda x: x.str.contains(f'\{value}', na=False)).any(axis=1)]
+
